@@ -20,13 +20,13 @@
     BoxSharedObjectBuilder *builder = [[BoxSharedObjectBuilder alloc] init];
 
     builder.access = BoxAPISharedObjectAccessOpen;
-    STAssertEquals(@"open", [builder bodyParameters][@"access"], @"Shared link access property is not set correctly");
+    STAssertEqualObjects(@"open", [builder bodyParameters][@"access"], @"Shared link access property is not set correctly");
     
     builder.access = BoxAPISharedObjectAccessCompany;
-    STAssertEquals(@"company", [builder bodyParameters][@"access"], @"Shared link access property is not set correctly");
+    STAssertEqualObjects(@"company", [builder bodyParameters][@"access"], @"Shared link access property is not set correctly");
 
     builder.access = BoxAPISharedObjectAccessCollaborators;
-    STAssertEquals(@"collaborators", [builder bodyParameters][@"access"], @"Shared link access property is not set correctly");
+    STAssertEqualObjects(@"collaborators", [builder bodyParameters][@"access"], @"Shared link access property is not set correctly");
 }
 
 - (void)testThatPreviewPermissionsAreProperlySet
